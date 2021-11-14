@@ -1,9 +1,10 @@
 package com.example.workflow;
 
+import camundajar.impl.scala.util.Random;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import java.util.Random;
+
 
 public class CheckWeatherDelegate implements JavaDelegate {
     @Override
@@ -11,7 +12,6 @@ public class CheckWeatherDelegate implements JavaDelegate {
 
         Random random = new Random();
 
-        delegateExecution.setVariable("name", "Chingiz");
         delegateExecution.setVariable("weatherOk", random.nextBoolean() );
 
     }
